@@ -38,10 +38,10 @@ Read more in this [blog post](https://www.gitkraken.com/blog/gitkraken-client-mi
 ## Integration - 1000 Series Errors
 
 When connecting to a service, you may see:
-- Error 1002
-- Error 1003
-- Error 1005
-- Error 1007
+- Error 2002
+- Error 2003
+- Error 2005
+- Error 2007
 
 <figure class='figure center'>
   <img src="/wp-content/uploads/error-1002.png" srcset="/wp-content/uploads/error-1002@2x.png 2x" class="help-center-img img-bordered">
@@ -122,10 +122,9 @@ If GitHub repositories or remotes are missing, and you see errors about organiza
 </figure>
 
 ### Checklist
-- Check [GitHub application access](https://github.com/settings/connections/applications/a7557949433b7d282a76)
-- Ensure the organization approves GitKraken under [Organization Approval](https://help.github.com/articles/requesting-organization-approval-for-your-authorized-applications/)
-- If using another person’s repo, fork it or ask them to [install GitKraken](/gitkraken-desktop/how-to-install/) and connect GitHub
-- Learn more from [GitHub’s app restriction guide](https://help.github.com/articles/about-third-party-application-restrictions/)
+- Only one version of a similarly named branch appears
+- Files with differing capitalization may disappear, appear deleted, or misbehave
+- Staged files may not show as staged via `git status`
 
 ***
 
