@@ -18,9 +18,9 @@ Check out our [GitKraken Roadmap](https://www.gitkraken.com/git-client/roadmap?p
 <a id="v11-2-1"></a>
 ## Version 11.2.1
 
-<kbd>Monday, July 7th, 2025</kbd>
+<kbd>Monday, July 27th, 2025</kbd>
 
-_"Tabsolutely better: smarter start, sharper avatars, speedier search."_
+_"More Jarvis. Less Skynet."_
 
 ### Improvements 🙌
 - Revamped New Tab Experience:
@@ -29,9 +29,11 @@ _"Tabsolutely better: smarter start, sharper avatars, speedier search."_
 - Improved coverage for GitLab avatars in the Commit Graph.
 
 ### Bug Fixes 🐛
- - Fixed an issue where AI-generated PR titles and descriptions were not working correctly with some GitLab repositories.
- - GitHub Student Pack users will no longer get "missing org header" errors when using GitKraken AI features.
- - Fixed an issue where auto-resolving a conflict with AI did not work with a conflict generated from a cherry-pick or a stash.
+  - The [Repository Management tab](/gitkraken-desktop/open-clone-init/#repository-management) now displays GitLab workspaces with more than 25 repos.
+ - Fixed an issue in the Commit Graph where branch labels wouldn't render properly.
+ - Fixed several styling issues across the application.
+ - Experimental Feature - Git Executable:
+   - Fixed an issue where Pull failed with files having the same name but different casing in a case-insensitive file system.
 
 ***
 
