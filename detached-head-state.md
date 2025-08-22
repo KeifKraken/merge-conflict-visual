@@ -11,24 +11,23 @@ Detached HEAD state lets you check out any commit in GitKraken Desktop without c
 
 ***
 
-## Enter Detached HEAD State
+## Viewing a Past Commit (Detached HEAD)
+
+To explore a previous state of your repository without affecting branches:
 
 1. Right-click the commit you want to inspect.
-2. Select <kbd><strong>Checkout this commit</strong></kbd>.
+2. Choose **Checkout this commit** from the context menu.
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/checkout-commit-2025.png' class="help-center-img img-bordered" alt="Right-clicking a commit to checkout">
-  <figcaption style="text-align: center; color: #888;">Check out any past commit without creating a new branch.</figcaption>
-</figure>
+![Right-clicking a commit to checkout](/wp-content/uploads/checkout-commit-2025.png)  
+*This action checks out a specific commit directly—no new branch is created.*
 
-The checked-out commit will display a `HEAD` label, indicating you’re in detached HEAD state.
+Git will enter a **detached HEAD** state. You’ll see a `HEAD` label next to the selected commit.
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/HEAD-2025.png' class="help-center-img img-bordered" alt="HEAD label on commit">
-  <figcaption style="text-align: center; color: #888;">GitKraken tags the commit with HEAD.</figcaption>
-</figure>
+![HEAD label on commit](/wp-content/uploads/HEAD-2025.png)  
+*GitKraken highlights the current commit with a HEAD tag.*
 
-You can now review the full history and diffs, or create a branch from this state.
+While in this state, you can inspect the repo at that point in time. If you want to make changes or preserve work, create a branch before switching away.
+
 
 ***
 
@@ -53,29 +52,25 @@ To preserve your work, create a branch from the current commit:
 
 ***
 
-## Exit Detached HEAD State
+## Leaving Detached HEAD State
 
-To exit detached HEAD state:
+To exit detached HEAD state, switch to any existing branch.
 
-- Check out any local branch.
+This restores your previous branch context and removes the `HEAD` marker from the commit view. Any changes made while detached will be discarded unless they were saved to a branch.
 
-This will remove the `HEAD` label and discard any unpreserved commits.
+![Discarding commits on branch checkout](/wp-content/uploads/discard-commits.gif)  
+*Unbranched commits disappear after switching branches.*
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/discard-commits.gif' class="help-center-img img-bordered" alt="Discarding commits on branch checkout">
-  <figcaption style="text-align: center; color: #888;">Unbranched commits are removed when you check out another branch.</figcaption>
-</figure>
+> ⚠️ **Warning:**  
+> Commits created in detached HEAD state are not retained unless you branch from them.  
+> If lost, they can sometimes be [recovered manually](https://help.gitkraken.com/gitkraken-desktop/detached-head-state/#recovering-lost-commits).
 
-<div class='callout callout--danger'>
-  <p><strong>Important:</strong> Commits made in detached HEAD state will be lost unless you create a branch. You may be able to <a href='https://help.gitkraken.com/gitkraken-desktop/detached-head-state/#recovering-lost-commits'>recover them manually</a>.</p>
-</div>
+---
 
-***
+## Restoring Unbranched Commits
 
-## Recover Lost Commits
+If you checked out a branch too soon:
 
-If you accidentally switch branches before saving your changes:
-
-- Click <a href="https://support.gitkraken.com/working-with-commits/undo-and-redo/">Undo</a> in GitKraken if available.
-- Use the CLI and run [`git reflog`](https://git-scm.com/docs/git-reflog) to find the lost commit SHA.
-- Then use [`git checkout <SHA>`](https://git-scm.com/docs/git-checkout) to re-enter that state.
+- Use GitKraken’s [Undo](https://support.gitkraken.com/working-with-commits/undo-and-redo/) feature if it's enabled.
+- Or run [`git reflog`](https://git-scm.com/docs/git-reflog) in your terminal to locate the lost commit.
+- Then return to it with [`git checkout <SHA>`](https://git-scm.com/docs/git-checkout).
