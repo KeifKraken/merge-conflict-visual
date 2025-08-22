@@ -11,24 +11,21 @@ Detached HEAD state lets you check out any commit in GitKraken Desktop without c
 
 ***
 
-## Enter Detached HEAD State
+## Check Out a Commit (Detached HEAD)
 
 1. Right-click the commit you want to inspect.
-2. Select <kbd><strong>Checkout this commit</strong></kbd>.
+2. Select **Checkout this commit**.
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/checkout-commit-2025.png' class="help-center-img img-bordered" alt="Right-clicking a commit to checkout">
-  <figcaption style="text-align: center; color: #888;">Check out any past commit without creating a new branch.</figcaption>
-</figure>
+![Right-clicking a commit to checkout](/wp-content/uploads/checkout-commit-2025.png)
+*Temporarily switch to a past commit without creating a new branch.*
 
-The checked-out commit will display a `HEAD` label, indicating you’re in detached HEAD state.
+GitKraken will mark the checked-out commit with a `HEAD` label, indicating you’ve entered detached HEAD state.
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/HEAD-2025.png' class="help-center-img img-bordered" alt="HEAD label on commit">
-  <figcaption style="text-align: center; color: #888;">GitKraken tags the commit with HEAD.</figcaption>
-</figure>
+![HEAD label on commit](/wp-content/uploads/HEAD-2025.png)
+*Detached HEAD is shown clearly in the commit graph.*
 
-You can now review the full history and diffs, or create a branch from this state.
+In this state, you can review file history, inspect diffs, or create a branch from the selected commit.
+
 
 ***
 
@@ -55,27 +52,24 @@ To preserve your work, create a branch from the current commit:
 
 ## Exit Detached HEAD State
 
-To exit detached HEAD state:
+To leave detached HEAD state, simply check out any local branch.
 
-- Check out any local branch.
+This will remove the `HEAD` label and discard any commits made while detached, unless they were saved to a branch.
 
-This will remove the `HEAD` label and discard any unpreserved commits.
+![Discarding commits on branch checkout](/wp-content/uploads/discard-commits.gif)  
+*Unbranched commits are removed when switching to another branch.*
 
-<figure class='figure center'>
-  <img src='/wp-content/uploads/discard-commits.gif' class="help-center-img img-bordered" alt="Discarding commits on branch checkout">
-  <figcaption style="text-align: center; color: #888;">Unbranched commits are removed when you check out another branch.</figcaption>
-</figure>
+> ⚠️ **Important:**  
+> Commits made while in detached HEAD state will be lost unless you create a branch.  
+> You may still be able to [recover them manually](https://help.gitkraken.com/gitkraken-desktop/detached-head-state/#recovering-lost-commits).
 
-<div class='callout callout--danger'>
-  <p><strong>Important:</strong> Commits made in detached HEAD state will be lost unless you create a branch. You may be able to <a href='https://help.gitkraken.com/gitkraken-desktop/detached-head-state/#recovering-lost-commits'>recover them manually</a>.</p>
-</div>
-
-***
+---
 
 ## Recover Lost Commits
 
-If you accidentally switch branches before saving your changes:
+If you switched branches before saving your work:
 
-- Click <a href="https://support.gitkraken.com/working-with-commits/undo-and-redo/">Undo</a> in GitKraken if available.
-- Use the CLI and run [`git reflog`](https://git-scm.com/docs/git-reflog) to find the lost commit SHA.
-- Then use [`git checkout <SHA>`](https://git-scm.com/docs/git-checkout) to re-enter that state.
+- Try clicking [**Undo**](https://support.gitkraken.com/working-with-commits/undo-and-redo/) in GitKraken if it's available.
+- Or, use the CLI:  
+  Run [`git reflog`](https://git-scm.com/docs/git-reflog) to find the lost commit's SHA.  
+  Then restore it with [`git checkout <SHA>`](https://git-scm.com/docs/git-checkout).
